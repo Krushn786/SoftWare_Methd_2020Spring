@@ -1,0 +1,384 @@
+
+This particular program is made for users to make better choices.
+Thus multiple options will be taken of if something is selected.
+This will reduce human error, and guide the users to simpler version of the program!
+
+There will be so may test cases not included from program 2 as we made are GUI with keeping human error in mind
+
+
+
+
+---------------------------------------Test Case 1 (Everything works out):
+[//////////////ADDING////////////////]
+[//OutState//]
+
+(a)// Will add May Anderson as OutState(Non-TriState Student)
+FirstName: May
+LastName:  Anderson
+Credits:   ___(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select OutState
+keep   TriState unchecked
+
+Click Submit Adding
+------------------------
+
+(b)// Will add Lauren Brown as OutState(TriState Student)
+FirstName: Lauren
+LastName:  Brown
+Credits:   ___(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select OutState
+make   TriState checked
+
+Click Submit Adding
+------------------------
+[//International//]
+
+(c)// Will add Simon Michael as International(Exchange Student)
+FirstName: Simon
+LastName:  Michael
+Credits:   ___(numerical value more than 9) [international student must have 9 or more credit]
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select International
+make   Exchange checked
+
+Click Submit Adding
+------------------------
+
+(d)// Will add David Lee as International(Non-Exchange Student)
+FirstName: David
+LastName:  Lee
+Credits:   ___(numerical value more than 9)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select International
+keep   Exchange unchecked
+
+Click Submit Adding
+------------------------
+
+[//InState//]
+
+(e)// Will add Peter Parker as InState(FullTime Student)
+FirstName: Peter
+LastName:  Parker
+Credits:   ___(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select InState
+keep   Funding unchecked if no Funding available
+       Funding checked if Funding available -> Type funding amount numerical
+
+Click Submit Adding
+------------------------
+
+(f)// Will add Jimmy Bush as InState(PartTime Student)
+FirstName: Jimmy
+LastName:  Bush
+Credits:   ___(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select InState
+keep   Funding unchecked if no Funding available
+       Funding checked if Funding available -> Type funding amount numerical
+
+Click Submit Adding
+------------------------
+
+[//////////////Removing////////////////]
+
+(g)// Will remove Lauren Brown
+FirstName: Lauren
+LastName:  Brown
+
+Click Submit Remove
+------------------------
+
+(h)// Will remove Simon Michael
+FirstName: Simon
+LastName:  Michael
+
+Click Submit Remove
+---------------------------------------
+* Note on the test case *
+If any student is added/removed and if it was done successfully than a message with success statement will print!
+
+We have made sure that if any button was selected than we will disable the non related attributes!
+Thus no human error!
+------------------------------------------------------------------------------------------------------------------------
+---------------------------------------Test Case 2 (When List is empty and then Remove command is executed
+                                                    or trying to remove when someone doesn't exist in the list!)
+
+// give NullPointerException
+
+FirstName: Lauren
+LastName:  Brown
+
+Click Submit Remove
+------------------------
+// Will add Lauren Brown as OutState(TriState Student)
+FirstName: Lauren
+LastName:  Brown
+Credits:   ___(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select OutState
+make   TriState checked
+
+Click Submit Adding
+------------------------
+// give NullPointerException
+FirstName: Peter
+LastName:  Parker
+
+Click Submit Remove
+------------------------
+
+// remove Lauren Brown successfully
+FirstName: Lauren
+LastName:  Brown
+
+Click Submit Remove
+------------------------
+* Note on the test case *
+
+We have carried on the errors from last project! Some errors are inevitable thus every time a user tries to remove
+a person when list is empty it will give an saying list is empty add before remove!
+
+When a user try to remove someone who is not in the list it will throw an Exception saying user not found!
+------------------------------------------------------------------------------------------------------------------------
+---------------------------------------Test case 3 (Adding the same person again with same and different attributes)
+
+// Will add Peter Parker as InState(FullTime Student)
+FirstName: Peter
+LastName:  Parker
+Credits:   ___(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select InState
+keep   Funding unchecked if no Funding available
+       Funding checked if Funding available -> Type funding amount numerical
+
+Click Submit Adding
+------------------------(Same attributes)
+// Will throw InstanceAlreadyExistException
+
+FirstName: Peter
+LastName:  Parker
+Credits:   ___(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select InState
+keep   Funding unchecked if no Funding available
+       Funding checked if Funding available -> Type funding amount numerical
+
+Click Submit Adding
+------------------------(different attributes)
+// Will throw InstanceAlreadyExistException
+
+FirstName: Peter
+LastName:  Parker
+Credits:   ___(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select OutState
+keep   TriState unchecked
+
+Click Submit Adding
+------------------------
+
+* Note on the test case *
+Doesn't matter if the student type is Instate, OutState, International however if the student exist in the database,
+Then no-one can add the a student with same name, even after same or different attributes!
+------------------------------------------------------------------------------------------------------------------------
+---------------------------------------Test case 4 (Negative Or Alphabetical or Symbol with credits or funds will be error)
+// Will throw IllegalArgumentException
+FirstName: Peter
+LastName:  Parker
+Credits:   !1  (Symbol)
+        OR 1 2 (WhiteSpace)
+        OR  1  (WhiteSpace)
+        OR 1S  (Alphabetical)
+        OR -1  (Negative)
+
+           12 will work and will process further
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select Instate
+keep:   !1  (Symbol)
+        OR 1 2 (WhiteSpace)
+        OR  1  (WhiteSpace)
+        OR 1S  (Alphabetical)
+        OR -1  (Negative)
+
+           1000 will work and will process further
+
+Click Submit Adding
+------------------------
+
+* Note on the test case *
+Negative numbers don't do any good in this program, and we could have ignored and corrected
+this error with multiplying by -1 but we don't know what's in the user brain so we kept it as an error.
+
+Anything other than numerical entry in either funding or credits -> will result in IllegalArgumentException
+------------------------------------------------------------------------------------------------------------------------
+---------------------------------------Test case 5 (Name Containing symbols and numbers will be error)
+If either firstname or lastname contains any of the below String style than it will result in:
+//IllegalArgumentException
+(The string entered is 6 char long)
+Wi1son(number)
+Wils n(whitespace)
+Wilso (whitespace)
+ ilson(whitespace)
+Wil$on(symbol)
+
+//Will add Peter Parker successfully
+FirstName: Peter
+LastName:  Parker
+Credits:   ___(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select OutState
+keep   TriState unchecked
+
+Click Submit Adding
+------------------------
+
+* Note on the test case *
+It's common to have fancy username, and from my knowledge there are some names with symbols in it!
+However we have kept simple names and no fanciness, thus any violation of the rule, and there will
+be error thrown.
+------------------------------------------------------------------------------------------------------------------------
+---------------------------------------Test case 6 (First alphabet of First/Last Name lowercase character will be error)
+
+//If either firstName or last name contains lowercase alphabets such as below example
+//IllegalArgumentException
+peter
+parker
+
+//Will add Peter Parker successfully
+FirstName: Peter
+LastName:  Parker
+Credits:   ___(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select OutState
+keep   TriState unchecked
+
+Click Submit Adding
+------------------------
+
+A I wilson Long 8 1000  // Will throw an IllegalArgumentException
+
+A I Wilson long 8 1000  // Will throw an IllegalArgumentException
+
+* Note on the test case *
+For the purpose of sense we have asked to keep every First/Last name's first alphabet to be Uppercase!
+We could have made to first character Uppercase if it was provided Lowercase, however the program was
+getting really complicated. So we decided to keep things simple in code, and throw an exception instead!
+
+------------------------------------------------------------------------------------------------------------------------
+---------------------------------------Test case 7 (credit limit, and fund limit (will be error if < 0)
+                                                    Part-Time vs Full-Time)
+
+[International]
+// Will NOT add Peter Parker as InState(PartTime Student) as the compulsory limit for international student is 9 not 0
+FirstName: Peter
+LastName:  Parker
+Credits:   8(numerical value more than 9)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select International
+keep   Exchange unchecked
+
+Click Submit Adding
+
+------------------------
+// Will NOT add Peter Parker as InState(FullTime Student) Will not add as the credit is negative
+FirstName: Peter
+LastName:  Parker
+Credits:   -1(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select InState
+keep   Funding checked if -> funding amount numerical(1000)
+
+Click Submit Adding
+------------------------
+// Will add Peter Parker as InState(FullTime Student) Will calculate the funds enter
+
+FirstName: Peter
+LastName:  Parker
+Credits:   12(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select InState
+keep   Funding checked if -> funding amount numerical(10000)
+
+Click Submit Adding
+tuitionDue = $5,637
+tuitionDueAfterFunds = 0
+funds remaining = (10000-5637) = 4363
+------------------------
+
+// Will add Peter Parker as InState(PartTime Student) Will NOT calculate the funds enter
+FirstName: Peter
+LastName:  Parker
+Credits:   8(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select InState
+keep   Funding checked if -> funding amount numerical(1000)
+
+Click Submit Adding
+tuitionDue = $4,310
+tuitionDueAfterFunds = $4,310
+------------------------
+// Will add Peter Parker as InState(FullTime Student) Will calculate the funds enter
+FirstName: Peter
+LastName:  Parker
+Credits:   12(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select InState
+keep   Funding checked if -> funding amount numerical(1000)
+
+Click Submit Adding
+tuitionDue = $6,637
+tuitionDueAfterFunds = $5,637
+funds remaining = (1000-6637) = 0
+------------------------
+
+* Note on the test case *
+As there are really no limits for funds in real life, so we kept it like real life, no limit!
+
+
+* Note on the test case *
+If the student has 0 or less credits then there is no point of adding them in the list.
+Also if they are international student there limit starts at 9 rather than 0.
+
+// Will add Peter Parker as InState(FullTime Student) Will calculate the funds enter
+FirstName: Peter
+LastName:  Parker
+Credits:   16(numerical value more than 0)
+
+RadioButton->CheckBox: Select option from ("Instate->Funding","OutState->TriState","International->Exchange")
+Select InState
+keep   Funding checked if -> funding amount numerical(1000)
+
+Click Submit Adding
+tuitionDue: $7,936
+tuitionDueAfterFunds = $7,936
+funds remaining = (0-7,936) = 0
+------------------------
+
+* Note on the test case *
+The above statement have credit limit greater than 15 thus they will
+only be charged for only 15 credits!
+This were the rule set by Mrs.Lily Chang
+
+

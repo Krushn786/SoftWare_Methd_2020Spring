@@ -1,0 +1,223 @@
+---------------------------------------Test Case 1 (Everything works out):
+
+A O May Anderson 17 F   // Will add May Anderson as OutState(Non-TriState Student)
+A O Lauren Brown 17 T   // Will add Lauren Brown as OutState(TriState Student)
+A O Simons Michael 8 F  // Will add Simons Michael as OutState(Non-TriState Student)
+A I Peter Parker 8 0    // Will add Peter Parker as a Instate Student(0 funding)
+A I Wilson Long 8 1000  // Will add Wilson Long as a Instate Student (0 funding)
+A I Jimmy Bush 12 1000  // Will add Jimmy Bush as a Instate Student (1000 funding)
+A N David Lee 12 F      // Will add David Lee as International(Non-exchange Student)
+A N Joe Kim 12 T        // Will add Joe Kim as International(Exchange Student)
+
+R Simons Michael        // Will remove Simons Michael from the list
+P                       // Will Print info of student with there status, name, credits, and tuition due
+R Joe Kim               // Will remove Joe Kim from the list
+
+Q                       // Will Quit the Program
+
+* Note on the test case *
+If any student is added/removed and if it was done successfully than a message with success statement will print!
+
+---------------------------------------Test Case 2 (Using R-cmd when the list is empty, using R-cmd on student
+                                                    not listed, Using R-cmd on student listed)
+
+R Jay Perry             // Will throw NullPointerException
+
+A O May Anderson 17 F   // Will add May Anderson as OutState(Non-TriState Student)
+
+R Jay Perry             // Will throw NoSuchElementException
+
+R May Anderson          // Will remove May Anderson from the list!
+
+* Note on the test case *
+There are 2 errors for R, because sometimes user might need to know if the there is anyone in the list!
+If we just keep printing the same error message than the error will be redundant, thus throw warning to user
+if the list is empty when they try to remove someone!
+
+---------------------------------------Test case 3 (Adding the same person again)
+
+A O Lauren Brown 17 T      // Will add Lauren Brown as OutState(TriState Student)
+A O Lauren Brown 17 T      // Will throw InstanceAlreadyExistException
+A I Lauren Brown 17 10 0   // Will throw InstanceAlreadyExistException
+
+* Note on the test case *
+Doesn't matter if the student type is I, O, N, however if the student exist in the database,
+Then no-one can add the a student with same name, even after different attributes!
+
+---------------------------------------Test case 4 (Extra commands on same line being avoided)
+
+a)
+A O May Anderson 17 F   // Will add May Anderson as OutState(Non-TriState Student)
+P Q                     // Will print info of existing students, however ignore Q and go to next line
+A O Lauren Brown 17 T   // Will add Lauren Brown as OutState(TriState Student)
+
+b)
+A O May Anderson 17 F 10 T  // Will add May Anderson as OutState(Non-TriState Student), however ignore 10 and F
+A O Lauren Brown 17 T       // Will add Lauren Brown as OutState(TriState Student)
+
+c)
+A O Lauren Brown 17 T   // Will add Lauren Brown as OutState(TriState Student)
+R Lauren Brown x t 3 !  // Will remove Lauren Brown, however ignore x, t, 3 and !
+
+* Note on the test case *
+It can be single or multiple extra commands. They will be ignored!
+If you read the instructions while running the code, it's specific about how many commands to input, however humans
+are not always perfect, and thus sometimes there might be an extra command a user might type. We can throw an ERROR
+however it seems unnecessary, thus we just go the next line, and ignore and act like it never happened!
+
+
+---------------------------------------Test case 5 (Negative credits or funds will be error)
+
+a)
+A I Peter Parker -8 0        // Will throw IllegalArgumentException
+
+b)
+A I Peter Parker 12 -1000    // Will throw IllegalArgumentException
+
+* Note on the test case *
+Negative numbers don't do any good in this program, and we could have ignored and corrected
+this error with multiplying by -1.
+However not all mistakes are forgiven for humans, thus for this testcase we throw an error, so users are
+careful of what they type!
+
+---------------------------------------Test case 6 (Name Containing symbols and numbers will be error)
+
+a)
+A I Wi1son Long 8 1000  // Will throw an IllegalArgumentException
+
+b)
+A I John $mith 17 1000  // Will throw an IllegalArgumentException
+
+* Note on the test case *
+It's common to have fancy username, and from my knowledge there are some names with symbols in it!
+However we have kept simple names and no fanciness, thus any violation of the rule, and there will
+be error thrown to the console.
+
+---------------------------------------Test case 7 (First alphabet of First/Last Name lowercase character will be error)
+
+A I wilson Long 8 1000  // Will throw an IllegalArgumentException
+
+A I Wilson long 8 1000  // Will throw an IllegalArgumentException
+
+* Note on the test case *
+For the purpose of sense we have asked to keep every First/Last name's first alphabet to be Uppercase!
+We could have made to first character Uppercase if it was provided Lowercase, however the program was
+getting really complicated. So we decided to keep things simple in code, and throw an exception instead!
+
+---------------------------------------Test case 8 (Illegal Commands(NOT A,R,P,Q, or I,O,N, or T,F) will be error)
+a)
+A O Lauren Brown 17 T       // Will add Lauren Brown as OutState(TriState Student)
+
+b)
+[Z] O Lauren Brown 17 T       // Will throw a IllegalArgumentException
+Only Add(A), Remove(R), Print(P), Quit(Q) valid
+
+c)
+A [F] Lauren Brown 17 T       // Will throw a IllegalArgumentException
+Only Instate(I), Outstate(O), and International(I) valid
+
+d)
+A O Lauren Brown 17 [R]       // Will throw a IllegalArgumentException
+Only True(T), False(F) valid
+
+* Note on the test case *
+Every input is a unique key to a command in the code, and thus if the key is not found than code won't work!
+Our program is very specific at the starting on what commands are valid, and what you can input!
+It must be followed otherwise it will throw an error.
+
+---------------------------------------Test case 9 (credit limit, and fund limit (will be error if < 0) )
+a)
+A I Wilson Long 8 1000      // Will not calculate funds in TuitionDue, as the student is part-time
+tuitionDue = $4,310
+tuitionDueAfterFunds = $4,310
+
+b)
+A I Wilson Long 12 1000     // Will reduce TuitionDue-funds
+tuitionDue = $6,637
+tuitionDueAfterFunds = $5,637
+funds remaining = (1000-6637) = 0
+c)
+A I Wilson Long 12 10000    // Will store remaining funds as fund will remain after paying for tuition due
+tuitionDue = $5,637
+tuitionDueAfterFunds = 0
+funds remaining = (10000-5637) = 4363
+
+* Note on the test case *
+As there are really no limits for funds in real life, so we kept it like real life, no limit!
+
+d)
+A I Wilson Long 8 1000      // Will add Wilson Long with 8 credits
+Credits : 8
+
+e)
+A N Wilson Long 8 1000      // Will throw IllegalArgumentException(NOTE: International)
+
+f)
+
+A I Wilson Long 0 1000      // Will throw IllegalArgumentException
+
+* Note on the test case *
+If the student has 0 or less credits then there is no point of adding them in the list.
+Also if they are international student there limit starts at 9 rather than 0.
+
+
+g)(general rule)
+A I Peter Parker 16 0
+Credit: 16
+tuitionDue: $7,936
+
+A N Wilson Long 17 F
+Credit: 17
+tuitionDue: $15,966
+
+A O May Anderson 17 F
+Credit: 17
+tuitionDue: $12,781
+
+* Note on the test case *
+All of this statement have credit limit greater than 15 thus they will
+only be charged for only 15 credits!
+This were the rule set by Mrs.Lily Chang
+
+---------------------------------------Test case 10 (Part-Time vs Full-Time)
+
+a) InState:
+A I Peter Parker 8 0    // Will add Peter Parker as a Instate Student(0 funding)
+A I Wilson Long 8 1000  // Will add Wilson Long as a Instate Student (0 funding)
+A I Jimmy Bush 12 1000  // Will add Jimmy Bush as a Instate Student (1000 funding)
+
+* Note on the test case *
+If you are part-time then you TuitionDue will still not be reduced.
+You have to be full-time to receive the discount of funds
+
+b) OutState
+A O May Anderson 17 F   // Will add May Anderson as OutState(Non-TriState Student)
+Credit: 17
+tuitionDue: $12,781
+
+{
+A O Jake Merry 8 T      // Will add Jake Merry as OutState(TriState Student)
+OR
+A O Jake Merry 8 F      // Will add Jake Merry as OutState(NonTriState Student)
+}
+Credit: 8
+tuitionDue: $6,894
+
+A O Lauren Brown 17 T   // Will add Lauren Brown as OutState(TriState Student)
+Credit: 17
+tuitionDue: $9,781
+
+* Note on the test case *
+If you are [Tri-State student && full time] you will $200 discount per credit.
+Difference is seen during print!
+
+c)
+A N May Anderson 17 F   // Will add May Anderson as International(Non-Exchange Student)
+A N Jake Merry 6 T      // Will add Jake Merry as International(Exchange Student)
+A N Lauren Brown 17 T   // Will add Lauren Brown as International(Exchange Student)
+
+* Note on the test case *
+If you are exchange student then you don't need to pay any credit fees.
+You only pay fulltime/partime + international fee!
+Difference is seen during print!
+

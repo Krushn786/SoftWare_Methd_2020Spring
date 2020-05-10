@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Software Development Ground Rules for CS 2430</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.2">
+  <style type="text/css">
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 16.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 13.3px 'Courier New'; color: #000000; -webkit-text-stroke: #000000}
+    p.p5 {margin: 0.0px 0.0px 16.0px 0.0px; line-height: 18.0px; font: 16.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000}
+    p.p6 {margin: 0.0px 0.0px 0.0px 48.0px; line-height: 18.0px; font: 16.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000}
+    p.p7 {margin: 0.0px 0.0px 0.0px 24.0px; line-height: 18.0px; font: 16.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000}
+    p.p8 {margin: 0.0px 0.0px 0.0px 96.0px; line-height: 18.0px; font: 16.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 18.0px; font: 16.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000}
+    li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 16.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.s2 {-webkit-text-stroke: 0px #000000}
+    span.s3 {font: 13.3px 'Courier New'; font-kerning: none}
+    td.td1 {width: 250.0px; margin: 0.5px 0.5px 0.5px 0.5px; padding: 1.0px 1.0px 1.0px 1.0px}
+    td.td2 {width: 83.1px; margin: 0.5px 0.5px 0.5px 0.5px; padding: 1.0px 1.0px 1.0px 1.0px}
+    td.td3 {width: 52.0px; margin: 0.5px 0.5px 0.5px 0.5px; padding: 1.0px 1.0px 1.0px 1.0px}
+    ul.ul1 {list-style-type: disc}
+    ul.ul2 {list-style-type: circle}
+  </style>
+</head>
+<body>
+<h2 style="margin: 0.0px 0.0px 19.9px 0.0px; text-align: center; line-height: 27.0px; font: 24.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>CS 213 Software Development Ground Rules</b></span></h2>
+<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; line-height: 21.0px; font: 18.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>General Rules</b></span></h3>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span><span class="s1">You will work with a partner throughout the semester for all programming assignments.</span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">All programs must adhere to the style and documentation standards given below. All test documents and class diagrams must adhere to the standards given below. Maximum deductions for not following the standards are listed for each category, near the end of this document.<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">One class per java file.</span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Programs must be submitted on or before the due date/time, <b>or 0 points</b>. <b>You MUST submit all programs to pass this course.<span class="Apple-converted-space"> </span></b></span></li>
+</ul>
+<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; line-height: 21.0px; font: 18.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Documentation Standards</b></span></h3>
+<p class="p3"><span class="s1">Files must be documented according to the javadoc standards. A javadoc comment is made up of two parts - a description followed by zero or more tags.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"> </span></p>
+<p class="p4"><span class="s1">    /**<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1">    This is the one sentence, descriptive summary, part of a doc comment.</span></p>
+<p class="p4"><span class="s1">    There can be more lines after the first one.</span></p>
+<p class="p4"><span class="s1">    ....</span></p>
+<p class="p4"><span class="s1">    @tag1    Comment for the tag1</span></p>
+<p class="p4"><span class="s1">    @tag2    Comment for the tag2</span></p>
+<p class="p4"><span class="s1">    ...</span></p>
+<p class="p4"><span class="s1">    */</span></p>
+<p class="p3"><span class="s1"> </span></p>
+<p class="p3"><span class="s1">The first line is indented to line up with the code below the comment, and starts with /** followed by a return. The last line begins with */ followed by a return. The comment for a code entity (class or method) must be immediately before the code entity. The first sentence of each doc comment should be a summary sentence, containing a concise but complete description of the code entity. It is important to write crisp and informative initial sentences that can stand on their own. This sentence ends at the first period that is followed by a blank, tab, or line terminator, or at the first tag. Any tags come at the end.<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1">Minimally, we require the following documentation:<span class="Apple-converted-space"> </span></span></p>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span><span class="s1">Comment block at the top of each class. Since we have one class per file, this usually serves as the "file" comment block.</span></li>
+</ul>
+<p class="p4"><span class="s1"> </span></p>
+<p class="p4"><span class="s1">/**</span></p>
+<p class="p4"><span class="s1">First, a single, very descriptive sentence describing the class.</span></p>
+<p class="p4"><span class="s1">Then, a couple more sentences of description to elaborate.</span></p>
+<p class="p4"><span class="s1">@author  "your name goes here, but not in quotes"</span></p>
+<p class="p4"><span class="s1">*/</span></p>
+<p class="p6"><span class="s1"> </span></p>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span><span class="s1">Every method and constructor must start with a comment block which describes what the method (or constructor) does (points lost otherwise). The first sentence must be a very descriptive summary of the method (or constructor). The following lines, if necessary, elaborate and/or give any extra information the user should know. All parameters must be listed using the @param tag. If there is a return value, it is listed with the @return tag. For example:<span class="Apple-converted-space"> </span></span></li>
+</ul>
+<p class="p7"><span class="s1"> </span></p>
+<p class="p4"><span class="s1">    /**</span></p>
+<p class="p4"><span class="s1">    Deletes the person with the given name from the list.</span></p>
+<p class="p4"><span class="s1">    Does nothing if name doesn't appear in the list.</span></p>
+<p class="p4"><span class="s1">    @param name  of the person to delete</span></p>
+<p class="p4"><span class="s1">    @return  true is person was deleted, false otherwise</span></p>
+<p class="p4"><span class="s1">    */</span></p>
+<p class="p4"><span class="s1">    public boolean deletePerson(String name)</span></p>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span><span class="s1">You can comment sections of code within methods. Use the // comments when you do. But don't overdo it! Excessive comments can be distracting, and comments that add nothing to the understanding of the code are particularly distracting. For example,<span class="Apple-converted-space"> </span></span></li>
+</ul>
+<p class="p4"><span class="s1">        count = count + 1;      // add one to count</span></p>
+<p class="p6"><span class="s1">is a useless comment. For the most part, you shouldn't need more than one line of comments within methods for every few lines of code. If you feel you need to write a comment to make a section of code clear, then you probably should break that section out into a separate method!<span class="Apple-converted-space"> </span></span></p>
+<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; line-height: 21.0px; font: 18.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Names</b></span></h3>
+<ul class="ul1">
+  <li class="li3"><span class="s2"><b></b></span><span class="s1"><b>Use descriptive names!</b> You'll find that this not only improves your grade, but it also makes your programs easier to write and debug. If you're tempted to use a poor name for something, then you probably don't completely understand the problem you're trying to solve yet! Figure that out first before trying to go on.<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Variable and data members:<span class="Apple-converted-space"> </span></span></li>
+  <ul class="ul2">
+    <li class="li3"><span class="s2"></span><span class="s1">These should generally be nouns or noun phrases such as </span><span class="s3">grade</span><span class="s1"> and </span><span class="s3">gradeForStudent</span><span class="s1">. The exception is </span><span class="s3">for</span><span class="s1"> loop counters; this is the only place where it is <i>sometimes</i> acceptable to use a one-letter name such as </span><span class="s3">i</span><span class="s1">.<span class="Apple-converted-space"> </span></span></li>
+    <li class="li3"><span class="s2"></span><span class="s1">These names must start with a small letter and each subsequent word in a multi-word name must be capitalized. Use lower case for the remaining letters.<span class="Apple-converted-space"> </span></span></li>
+  </ul>
+  <li class="li3"><span class="s2"></span><span class="s1">Method names:<span class="Apple-converted-space"> </span></span></li>
+  <ul class="ul2">
+    <li class="li3"><span class="s2"></span><span class="s1">Names for methods with a return type of </span><span class="s3">void</span><span class="s1"> should generally be verb phrases such as </span><span class="s3">printOrders()</span><span class="s1">.<span class="Apple-converted-space"> </span></span></li>
+    <li class="li3"><span class="s2"></span><span class="s1">Names for methods with other return types should generally be nouns or noun phrases such as </span><span class="s3">monthlySalary()</span><span class="s1">.<span class="Apple-converted-space"> </span></span></li>
+    <li class="li3"><span class="s2"></span><span class="s1">Method names shall start with a small letter and each subsequent word in a multi-word name shall be capitalized. Use lower case for the remaining letters.<span class="Apple-converted-space"> </span></span></li>
+  </ul>
+  <li class="li3"><span class="s2"></span><span class="s1">Class names:<span class="Apple-converted-space"> </span></span></li>
+  <ul class="ul2">
+    <li class="li3"><span class="s2"></span><span class="s1">Use meaningful common nouns.<span class="Apple-converted-space"> </span></span></li>
+    <li class="li3"><span class="s2"></span><span class="s1">Start each class name with an upper-case letter, and capitalize each "word" in a multi-word name. Use lower case for the remaining letters.<span class="Apple-converted-space"> </span></span></li>
+  </ul>
+  <li class="li3"><span class="s2"></span><span class="s1">NO magic numbers! If a constant is used in the program, you must properly name the constant.</span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Names for constants (final variables):<span class="Apple-converted-space"> </span></span></li>
+  <ul class="ul2">
+    <li class="li3"><span class="s2"></span><span class="s1">Use meaningful nouns or noun phrases. For example, the name </span><span class="s3">TEN</span><span class="s1"> in<span class="Apple-converted-space"> </span></span></li>
+  </ul>
+</ul>
+<p class="p4"><span class="s1">        public final int TEN = 10; // useless!</span></p>
+<p class="p8"><span class="s1">doesn't add to the understanding of the program at all.<span class="Apple-converted-space"> </span></span></p>
+<ul class="ul1">
+  <ul class="ul2">
+    <li class="li3"><span class="s2"></span><span class="s1">Use upper case for the letters, with underscores to separate words.<span class="Apple-converted-space"> </span></span></li>
+    <li class="li3"><span class="s2"></span><span class="s1">In general, any value other than 0 or 1 should be given a name in a constant declaration.<span class="Apple-converted-space"> </span></span></li>
+  </ul>
+</ul>
+<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; line-height: 21.0px; font: 18.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Formatting</b></span></h3>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span><span class="s1">Indent your programs! You must indent 3 or 4 spaces (IntelliJ/Preferences/Editor/Code Style/Java/Tabs and Indents; Eclipse/Preferences/General/Editors/Text Editors)</span></li>
+  <ul class="ul2">
+    <li class="li3"><span class="s2"></span><span class="s1">inside all brace pairs, and<span class="Apple-converted-space"> </span></span></li>
+    <li class="li3"><span class="s2"></span><span class="s1">for simple statements following </span><span class="s3">if</span><span class="s1">, </span><span class="s3">while</span><span class="s1">, </span><span class="s3">for</span><span class="s1">, </span><span class="s3">switch</span><span class="s1">, and </span><span class="s3">do</span><span class="s1">.<span class="Apple-converted-space"> </span></span></li>
+  </ul>
+</ul>
+<p class="p6"><span class="s1">You should be sure your editor is set up to indent each line by 3 or 4 spaces and that it does <i>not</i> insert tab characters in the source code.<span class="Apple-converted-space"> </span></span></p>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span><span class="s1">Statements that are spread over multiple lines must be indented to make it obvious which lines are continuations. For example,<span class="Apple-converted-space"> </span></span></li>
+</ul>
+<p class="p4"><span class="s1">        System.out.print("This is a message that's broken into two"</span></p>
+<p class="p4"><span class="s1">                         + " parts for no good reason.");</span></p>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span><span class="s1">When a line gets too long (for example, more than 78 columns), break it at a reasonable place. (IntelliJ/Preferences/Editor/Code Style/Java/Wrapping and Braces)</span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Line up the closing brace with the statement that includes the opening brace to make it clear how they are matched. For example,<span class="Apple-converted-space"> </span></span></li>
+</ul>
+<p class="p7"><span class="s1"> </span></p>
+<p class="p4"><span class="s1">        if ( radius &gt; 0 ){</span></p>
+<p class="p4"><span class="s1">           area = PI * radius * radius;</span></p>
+<p class="p4"><span class="s1">        }</span></p>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span><span class="s1">Each line must contain at most one statement, though a single statement may be spread over multiple lines.<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">There must be a space before and after each operator. Use one space after a comma.<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Skip lines between different sections of the program and between different methods.<span class="Apple-converted-space"> </span></span></li>
+</ul>
+<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; line-height: 21.0px; font: 18.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Unit Tests</b></span></h3>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span><span class="s1">For all programs, unit tests with JUnit and/or testbed mains will be required<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">The tests for the units must be thorough<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Details will be specified in the program description<span class="Apple-converted-space"> </span></span></li>
+</ul>
+<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; line-height: 21.0px; font: 18.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Test Specification</b></span></h3>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span><span class="s1">For some programs, a test specification will be required.<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">The test specification must be typed in a document and turned in by the specified date/time. Hand-written documents are not acceptable.</span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">The test specification must have tests to cover the cases implied by the program description<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">The test specification must list each case, with a description for the case, the precise input required, and the result expected. Each case must be separate and stand-alone. There are different ways to do this. A table is preferred. But it could be something as simple as:<span class="Apple-converted-space"> </span></span></li>
+</ul>
+<p class="p7"><span class="s1"> </span></p>
+<p class="p4"><span class="s1">    Test Cases for RPN Program</span></p>
+<p class="p4"><span class="s1"> </span></p>
+<p class="p4"><span class="s1">        1. Valid expression, multiple operators</span></p>
+<p class="p4"><span class="s1">             Input:  3 5 4 - 6 + *</span></p>
+<p class="p4"><span class="s1">             Expected Results:  The value is 21</span></p>
+<p class="p4"><span class="s1">          <span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1">        2. Too many operands</span></p>
+<p class="p4"><span class="s1">             Input:  4 5 6 +</span></p>
+<p class="p4"><span class="s1">             Expected Results: Error message</span></p>
+<p class="p4"><span class="s1">                 "Invalid Postfix Expression - Too many operands"</span></p>
+<p class="p4"><span class="s1"> </span></p>
+<p class="p4"><span class="s1">        3. Divide by 0</span></p>
+<p class="p4"><span class="s1">             Input:  4 0 /</span></p>
+<p class="p4"><span class="s1">             Expected Results: Error message</span></p>
+<p class="p4"><span class="s1">                 "Invalid Postfix Expression - Division by 0"</span></p>
+<p class="p4"><span class="s1"> </span></p>
+<p class="p4"><span class="s1">        etc.</span></p>
+<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; line-height: 21.0px; font: 18.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Class Diagram</b></span></h3>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span><span class="s1">Some programs will have a class diagram required.</span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">The class diagram must use the UML notations discussed in class.<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">The diagram must show the classes and the relationships between the classes.<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Specify all the classes, including classes such as Vector, Button, List, etc.<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">You must create the class diagram with a CASE tool. Hand drawing is not acceptable.<span class="Apple-converted-space"> </span></span></li>
+</ul>
+<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; line-height: 21.0px; font: 18.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Program Grading</b></span></h3>
+<p class="p3"><span class="s1">The programs you turn in should be considered "polished works of art!" There are many factors that will determine your grade on a program. Certainly, it is expected that your program will compile, run, and produce the correct (required) output. But merely satisfying these criteria does not guarantee you will receive any points! It is expected that you will apply the object-oriented techniques and good software engineering practices covered in this course. If not, there would be no reason for you to be taking this course! Also, it is expected that you will adhere to the style and documentation guidelines. Furthermore, most programs will require a test specification and a class diagram, which will figure in to your program grade. Sometimes there will be other requirements, such as JUnit tests and/or "testbed mains" for certain classes, that will affect your program grade. The maximum points that can be lost for each of these categories is listed below. These assume a 25 point program, but will be appropriately scaled if the number of points is not 25. Note that although these numbers total more than the 25 points, the lowest grade you can receive for a program is 0 (no negative grades). But remember that all programs must be completed and turned in to pass the course, even if you are getting an 0!</span></p>
+<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; line-height: 21.0px; font: 18.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Maximum Point Losses</b></span></h3>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span><span class="s1">Doesn't Compile: 25 (this is also the minimum off)<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Run-time Error: 25 (this is also the minimum off)<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Output Errors: 20<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">OO or Data Structure infractions: 20<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Style &amp; Documentation: 7 (further broken down below)<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Test Specification: 5<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Unit Tests: 5 per required class<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Class Diagram: 4<span class="Apple-converted-space"> </span></span></li>
+  <li class="li3"><span class="s2"></span><span class="s1">Extra/unnecessary files submitted: 1 point per file<span class="Apple-converted-space"> </span></span></li>
+</ul>
+<p class="p3"><span class="s1"> </span></p>
+<p class="p3"><span class="s1">Below are further breakdowns for style and documentation:<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"> </span></p>
+<table cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p9"><span class="s1"><b>Guideline Violated</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p9"><span class="s1"><b>each offense</b></span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p9"><span class="s1"><b>max off</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="s1">Class Comment</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p9"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p9"><span class="s1">2</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="s1">Method/Constructor comment block</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p9"><span class="s1">0.5</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p9"><span class="s1">3</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="s1">Braces lined up</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p9"><span class="s1">0.5<span class="Apple-converted-space"> </span></span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p9"><span class="s1">2</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="s1">Naming Conventions</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p9"><span class="s1">0.5<span class="Apple-converted-space"> </span></span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p9"><span class="s1">3</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="s1">Indentation</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p9"><span class="s1">0.5<span class="Apple-converted-space"> </span></span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p9"><span class="s1">2</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="s1">Magic Numbers</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p9"><span class="s1">0.5</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p9"><span class="s1">2</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="s1">Space between Operators</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p9"><span class="s1">0.5<span class="Apple-converted-space"> </span></span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p9"><span class="s1">1</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p3"><span class="s1"> </span></p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+#imageView{
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+    -fx-border-style: solid;
+    -fx-max-height: 50px;
+    -fx-max-width: 50px;
+}
+#showOrder{
+    -fx-background-color: rgba(167,207,168,0.6);
+    -fx-border-color: #1F1F1F;
+
+}
+#upPane{
+    -fx-background-color: rgba(141,219,224,0.3);
+}
+#downPane{
+    -fx-background-color: rgba(211,255,233,0.3);
+}
+
+#addTopping{
+    -fx-background-color: rgba(151,234,210,0.5);
+    -fx-border-color: #1F1F1F;
+
+}
+#remTopping{
+    -fx-background-color: rgba(140,199,161,0.5);
+    -fx-border-color: #1F1F1F;
+
+}
+#clearSelection{
+    -fx-background-color: rgba(141,147,165,0.5);
+    -fx-border-color: #1F1F1F;
+
+}
+#finalAdd{
+    -fx-background-color: rgba(116,34,108,0.5);
+    -fx-border-color: #1F1F1F;
+}
+#returnBack{
+    -fx-background-color: rgba(200,0,0,0.5);
+}
+#clearMenu{
+    -fx-background-color: rgba(0,0,200,0.5);
+}

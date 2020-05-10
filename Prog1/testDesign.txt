@@ -1,0 +1,121 @@
+Test Cases for TeamMember
+
+    /* all the inputs used System.out.println() to generate output in console
+
+    //Using Constructor and making new object!//
+        TeamMember obj1 = new TeamMember("Lily", new Date("01/22/2222"));
+        TeamMember obj2 = new TeamMember("Lily", new Date("01/22/2222"));
+        TeamMember obj3 = new TeamMember("Lily", new Date("01/22/2223"));
+
+
+    //Checking Getter method in TeamMember//
+        1.
+        input: obj1.getName() + " " + obj1.getStartDate()
+        output: Lily 1/22/2222
+        System.out.println(obj2.getName()+obj2.getStartDate());
+
+        2.
+        input: obj2.getName() + " " + obj2.getStartDate()
+        output: Lily 1/22/2222
+
+        3.
+        input: obj3.getName() + " " + obj3.getStartDate()
+        output: Lily1/22/2223
+
+
+    //Checking equals method in TeamMember//
+        1.
+        input: obj2.equals(obj1)
+        output: It's equal
+
+        2.
+        input: obj3.equals(obj1)
+        output: It's not equal
+
+
+    //Checking toString() Method in TeamMember//
+        1.
+        input: obj1.toString()
+        output: Lily 1/22/2222
+        
+        2.
+        input: obj2.toString()
+        output: Lily 1/22/2222
+
+        3.
+        input: obj3.toString()
+        output: Lily1/22/2223
+
+Test Cases for Date
+
+    // Testing overloaded constructor
+           Date test1 = new Date("11/30/1998");
+           Date test2 = new Date("2/29/2016");
+           Date test3 = new Date("2/29/2015");
+           Date test4 = new Date("2/29/2000");
+           Date test5 = new Date("12/31/2020");
+           Date test6 = new Date("9/31/2019");
+           Date test7 = new Date("2/29/1600");
+           Date test8 = new Date("2/30/1600");
+           Date test9 = new Date("2/29/1700");
+           Date test10 = new Date(test9);
+
+    // Testing if each date is valid
+        System.out.println("Validity Checks: (Date.isValid())");
+
+        1.
+        System.out.println(test1);
+        System.out.println(test1.isValid());
+
+        2.
+        System.out.println(test2);
+        System.out.println(test2.isValid());
+
+        3.
+        System.out.println(test3);
+        System.out.println(test3.isValid());
+
+        4.
+        System.out.println(test4);
+        System.out.println(test4.isValid());
+
+        5.
+        System.out.println(test5);
+        System.out.println(test5.isValid());
+
+        6.
+        System.out.println(test6);
+        System.out.println(test6.isValid());
+
+        7.
+        System.out.println(test7);
+        System.out.println(test7.isValid());
+
+        8.
+        System.out.println(test8);
+        System.out.println(test8.isValid());
+
+        9.
+        System.out.println(test9);
+        System.out.println(test9.isValid());
+
+        System.out.println();
+
+    /*
+       Testing equals method with same date, different date,
+       and not a date object (string)
+    */
+           System.out.println("Equivalency Checks: (Date.equal())");
+           1.
+           System.out.println("Does Date: 2/29/1700 = 2/29/1700?");
+           System.out.println(test10.equals(test9));
+
+           2.
+           System.out.println("Does Date: 2/29/1700 = 2/30/1600?");
+           System.out.println(test10.equals(test8));
+
+           3.
+           String str = new String();
+           System.out.println("Does Date: 2/29/1700 = (String object)?");
+           System.out.println(test10.equals(str));
+

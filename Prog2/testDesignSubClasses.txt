@@ -1,0 +1,276 @@
+##Test Design for Student Subclasses##
+
+	Wrong inputs / invalid will be handled at the TuitionManager level since TuitionManager can notify user.
+	These conditions include rejecting negative funds, rejecting 0 credits.
+
+----Instate:
+
+	The following conditions must be checked:
+
+		C1. Can instate handle max chargeable credits (15)?
+		
+			Specific test cases:
+				
+				T1. Cost of 15 credits, $0 funds.
+						Full time, charge for 15 credits.
+				T2. Cost of 08 credits, $0 funds.
+						Part time, charge for 08 credits.
+				T3. Cost of 16 credits, $0 funds.
+						Full time, charge for 15 credits.
+				T4. Cost of 14 credits, $0 funds.
+						Full time, charge for 14 credits.
+
+			    Test cases 1. and 3. should charge the same amount (15 credits worth)
+			    Test cases 2. and 4. should charge for the appropriate amount of credits.
+
+			Controls and Results:
+				
+				T1:
+					Control: $7936
+					Result: $7936
+				T2:
+					Control: $3464
+					Result: $3464
+				T3:
+					Control: $7936
+					Result: $7936
+				T4:
+					Control: $7503
+					Result: $7503
+
+            Condition Result: PASS
+
+		C2. Can Instate handle part time condition also respond with not applying allocated funds. 
+			
+			Specific test cases:
+			
+				T1. Cost of 12 credits, $1000 funds.
+						Full time, 1000 funds.
+				T2. Cost of 12 credits, $0000 funds.
+						Full time, 0 funds.
+				T3. Cost of 09 credits, $1000 funds.
+						Part time, 1000 funds.
+				T4. Cost of 09 credits, $0000 funds. 
+						Part time, 0 funds. 
+					
+				Test cases 1. and 2. should have a $1000 difference.
+				Test cases 3. and 4. should have no difference and should cost (part time fee) + 9 * (cost per credit).
+				
+			Controls and Results:
+				
+				T1:
+					Control:  $5637
+					Result: $5637
+				T2:
+					Control: $6637
+					Result: $6537
+				T3:
+					Control: $ 4743
+					Result: $ 4743
+				T4:
+					Control: $ 4743
+					Result: $ 4743
+
+            Condition Result: PASS
+
+----Outstate:
+
+	The following conditions must be checked:
+
+		C1. Can Outstate handle max chargeable credits (15)?
+
+			Specific test cases:
+
+				T1. Cost of 15 credits, is tri-state.
+						Full time, charge for 15 credits, 200 discount per credit.
+				T2. Cost of 08 credits, is tri-state.
+						Part time, charge for 08 credits, 200 discount per credit.
+				T3. Cost of 16 credits, is tri-state.
+						Full time, charge for 15 credits, 200 discount per credit.
+				T4. Cost of 14 credits, is tri-state.
+						Full time, charge for 14 credits, 200 discount per credit.
+
+			    Test cases 1. and 3. should charge the same amount (15 credits worth)
+			    Test cases 2. and 4. should charge for the appropriate amount of credits.
+
+			Controls and Results:
+
+				T1:
+					Control: $9781
+					Result: $9781
+				T2:
+					Control: $6894
+					Result: $6894
+				T3:
+					Control: $9781
+					Result: $9781
+				T4:
+					Control: $9225
+					Result: $9225
+
+            Condition Result: PASS
+
+        C2. Can Outstate apply part / full time?
+
+            Specific test cases:
+
+                T1. Cost of 12 credits, is tri-state.
+                        Full time, charge for 12 credits, 200 discount per credit.
+                T2. Cost of 14 credits, is tri-state.
+                        Full time, charge for 14 credits, 200 discount per credit.
+                T3. Cost of 09 credits, is tri-state.
+                        Part time, charge for 9 credits, no discount per credit.
+                T4. Cost of 11 credits, is tri-state.
+                        Part time, charge for 11 credits, no discount per credit.
+
+                Test cases 1. and 2. should have a full time university fee applied.
+                Test cases 3. and 4. should have a part time university fee applied.
+
+            Controls and Results:
+
+				T1:
+					Control: $8113
+					Result: $8113
+				T2:
+					Control: $9225
+					Result: $9225
+				T3:
+					Control: $7650
+					Result: $7650
+				T4:
+					Control: $9162
+					Result: $9162
+
+            Condition Result: PASS
+
+        C3. Can Outstate apply tri-state full time discount?
+
+            Specific test cases:
+
+                T1. Cost of 12 credits, is tri-state
+                        Full time, charge for 12 credits, 200 discount per credit.
+                T2. Cost of 12 credits, not tri-state
+                        Full time, charge for 12 credits, no discount per credit.
+                T3. Cost of 09 credits, is tri-state
+                        Part time, charge for 09 credits, no discount per credit.
+                T4. Cost of 09 credits, not tri-state
+                        Part time, charge for 09 credits, no discount per credit.
+
+                Test cases 1. and 2. should have a $2400 difference between 2. and 1.
+                Test cases 3. and 4. should have no difference.
+
+            Controls and Results:
+
+                T1:
+                    Control: $8113
+                    Result: $8113
+                T2:
+                    Control: $10513
+                    Result: $10513
+                T3:
+                    Control: $7650
+                    Result: $7650
+                T4:
+                    Control: $7650
+                    Result: $7650
+
+            Condition Result: PASS
+
+----International:
+
+    C1. Can International handle max chargeable credits (15)?
+
+	    Specific test cases:
+
+			    T1. Cost of 15 credits, not exchange.
+					Full time, charge for 15 credits.
+			    T2. Cost of 08 credits, not exchange.
+					Part time, charge for 08 credits.
+			    T3. Cost of 16 credits, not exchange.
+					Full time, charge for 15 credits.
+			    T4. Cost of 14 credits, not exchange.
+					Full time, charge for 14 credits.
+
+			Test cases 1. and 3. should charge the same amount (15 credits worth)
+			Test cases 2. and 4. should charge for the appropriate amount of credits.
+
+        Controls and Results:
+
+                T1:
+                    Control: $15966
+                    Result: $15966
+                T2:
+                    Control: $8756
+                    Result: $8756
+                T3:
+                    Control: $15966
+                    Result: $15966
+                T4:
+                    Control: $15021
+                    Result: $15021
+
+        Condition Result: PASS
+
+    C2. Can International handle part / full time condition?
+
+        Specific test cases:
+
+                T1. Cost of 12 credits, not exchange.
+                        Full time, charge for 12 credits.
+                T2. Cost of 14 credits, not exchange.
+                        Full time, charge for 14 credits.
+                T3. Cost of 09 credits, not exchange.
+                        Part time, charge for 9 credits.
+                T4. Cost of 11 credits, not exchange.
+                        Part time, charge for 11 credits.
+
+                Test cases 1. and 2. should have a full time university fee applied.
+                Test cases 3. and 4. should have a part time university fee applied.
+
+        Controls and Results:
+
+                T1:
+                    Control: $15966
+                    Result: $15966
+                T2:
+                    Control: $8756
+                    Result: $8756
+                T3:
+                    Control: $15966
+                    Result: $15966
+                T4:
+                    Control: $15021
+                    Result: $15021
+
+        Condition Result: PASS
+
+    C3. Can International handle exchange student condition?
+
+        Specific test cases:
+
+                T1. Cost of 12 credits, is exchange.
+                        Full time.
+                T2. Cost of 12 credits, not exchange.
+                        Full time, charge for 12 credits.
+                T3. Cost of 09 credits, is exchange.
+                        Part time.
+                T4. Cost of 09 credits, not exchange.
+                        Part time, charge for 09 credits.
+
+        Controls and Results:
+
+                T1:
+                    Control: $1791
+                    Result: $1791
+                T2:
+                    Control: $13131
+                    Result: $13131
+                T3:
+                    Control: $1196
+                    Result: $1196
+                T4:
+                    Control: $9701
+                    Result: $9701
+
+        Condition Result: PASS
+
